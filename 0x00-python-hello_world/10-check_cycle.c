@@ -19,10 +19,10 @@ int check_cycle(listint_t *list)
 	{
 		t = t->next;
 		h = h->next->next;
+		if (t == h)
+		{
+			return (1);
+		}
+		return (0);
 	}
-	if (t == h)
-	{
-		return (1);
-	}
-	return (0);
 }
