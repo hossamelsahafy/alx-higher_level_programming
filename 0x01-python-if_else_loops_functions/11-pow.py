@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def pow(a, b):
-    return abs(a ^ b)
+    r = a ** b
+    return r
