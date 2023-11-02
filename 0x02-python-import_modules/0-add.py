@@ -4,6 +4,3 @@ a = 1
 b = 2
 r = add(a, b)
 print("{} + {} = {} ".format(a, b, r))
-
-
-    
