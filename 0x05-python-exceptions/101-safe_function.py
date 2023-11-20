@@ -11,3 +11,5 @@ def safe_function(fct, *args):
         return None
     except ZeroDivisionError:
         res = None
+        return None
+
