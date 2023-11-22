@@ -1,8 +1,3 @@
-#!/usr/bin/python3
-
-"""Define a class Square."""
-
-
 class Square:
     """Represent a square."""
 
@@ -18,7 +13,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the size of the square, ensuring it is a positive integer."""
+        """Set the size of the square"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -27,16 +22,16 @@ class Square:
 
     @property
     def position(self):
-        """relative position of the square"""
+        """set the position of the square."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """set the position of the square"""
+        """Set the position of the square"""
         if (
             not isinstance(value, tuple)
             or len(value) != 2
-            or not all(isinstance(i, int) for i in value)
+            or not all(isinstance(i, int) and i >= 0 for i in value)
         ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
@@ -46,7 +41,7 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """print square with #"""
+        """Print the square with the character #."""
         if self.__size == 0:
             print()
         else:
