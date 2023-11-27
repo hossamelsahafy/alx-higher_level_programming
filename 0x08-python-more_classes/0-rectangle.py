@@ -14,8 +14,6 @@ Usage Example:
 
 
 class Rectangle:
-    """
-    Define Rectangle class
-    """
+    """Defines the blueprint of a rectangle"""
 
     pass
