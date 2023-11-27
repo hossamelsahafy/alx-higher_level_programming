@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Define class"""
+"""
+Define class.
+"""
 
 
 class Rectangle:
-    """Define Rectangle class"""
+    """
+    Define Rectangle class
+    """
 
     pass
