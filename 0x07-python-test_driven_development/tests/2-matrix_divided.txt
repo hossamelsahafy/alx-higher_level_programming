@@ -29,3 +29,6 @@ TypeError: div must be a number
 >>> print(matrix_divided(matrix, 0))
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
+
+>>> matrix = [[3, 9], [12, 15]]
+>>> print(matrix_divided(matrix, -3))
