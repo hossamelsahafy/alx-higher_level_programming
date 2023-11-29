@@ -10,6 +10,8 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    if text.strip() == "":
+        return
     for char in ".:?":
         text = text.replace(char, char + "\n\n")
     lines = text.split("\n")

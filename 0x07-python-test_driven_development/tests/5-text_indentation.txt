@@ -35,3 +35,5 @@ Hi there.
 
 >>> text_indentation("\t\t  Hello!")
 Hello!
+
+>>> text_indentation("          ")
