@@ -49,3 +49,11 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 TypeError: div must be a number
 
+>>> matrix = [1, 2, 3]
+>>> print(matrix_divided(matrix, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[]]
+>>> print(matrix_divided(matrix, 3))
+[[]]
