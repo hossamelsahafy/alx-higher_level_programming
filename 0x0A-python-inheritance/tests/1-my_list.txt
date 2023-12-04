@@ -32,3 +32,16 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 >>> my_list = MyList(['o', 'q', 'n', 'z', 'i'])
 >>> my_list.print_sorted()
 ['i', 'n', 'o', 'q', 'z']
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
