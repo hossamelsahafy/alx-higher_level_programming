@@ -15,3 +15,7 @@
 >>> my_list = MyList([])
 >>> my_list.print_sorted()
 []
+
+>>> my_list.print_sorted(5)
+Traceback (most recent call last):
+TypeError: print_sorted() takes 1 positional argument but 2 were given
