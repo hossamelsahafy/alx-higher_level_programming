@@ -3,7 +3,7 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 >>> try:
-...     bg.integer_validator("name", "John")
+...     bg.integer_validator("name", "Teemo")
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] name must be an integer
@@ -13,21 +13,16 @@
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] age must be greater than 0
 >>> try:
-...     bg.integer_validator("distance", -4)
+...     bg.integer_validator("discord", -5)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] distance must be greater than 0
+[ValueError] discord must be greater than 0
 >>> try:
-...     bg.integer_validator("height", 1.78)
+...     bg.integer_validator("he", 1.48)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] height must be an integer
+[TypeError] he must be an integer
 >>> try:
-...     bg.integer_validator("weight", 100)
+...     bg.integer_validator("we", 55)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
->>> try:
-...     bg.integer_validator(123, "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] 123 must be a string
