@@ -17,4 +17,17 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] distance must be greater than 0
-
+>>> try:
+...     bg.integer_validator("height", 1.78)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] height must be an integer
+>>> try:
+...     bg.integer_validator("weight", 100)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+>>> try:
+...     bg.integer_validator(123, "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] 123 must be a string
