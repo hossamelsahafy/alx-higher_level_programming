@@ -5,7 +5,7 @@ import json
 
 
 def save_to_json_file(my_obj, filename):
-    """Define to_json_string function"""
+    """Define save_to_json_file function"""
 
     with open(filename, "w", encoding="utf8") as i:
         json.dump(my_obj, i)
