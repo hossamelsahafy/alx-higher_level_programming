@@ -33,9 +33,10 @@ class Base:
             list_objs = []
         else:
             file_name = f"{cls.__name__}.json"
-            json_string = cls.to_json_string([obj.to_dictionary() for obj in list_objs])
+            list_dicts = [obj.to_dictionary() for obj in list_objs]
+            j_s = cls.to_json_string(list_dicts)
             with open(file_name, "w") as i:
-                i.write(json_string)
+                i.write(j_s)
 
     @staticmethod
     def from_json_string(json_string):
@@ -80,9 +81,9 @@ class Base:
         else:
             file_name = f"{cls.__name__}.csv"
             with open(file_name, "w", newline="") as csvfile:
-                writer = csv.writer(csvfile)
+                w = csv.writer(csvfile)
                 for obj in list_objs:
-                    writer.writerow([obj.id] + list(obj.to_dictionary().values()))
+                    w.writerow([obj.id] + list(obj.to_dictionary().values()))
 
     @classmethod
     def load_from_file_csv(cls):
@@ -98,8 +99,8 @@ class Base:
                         dummy = cls(1, 1, 0, 0, id)
                     elif cls.__name__ == "Square":
                         dummy = cls(1, 0, 0, id)
-                    dictionary = dict(zip(dummy.to_dictionary().keys(), attributes))
-                    instance.append(cls.create(**dictionary))
+                    dic = dict(zip(dummy.to_dictionary().keys(), attributes))
+                    instance.append(cls.create(**dic))
         except FileNotFoundError:
             pass
         return instance
@@ -108,10 +109,10 @@ class Base:
     def draw(list_rectangles, list_squares):
         """Draw all the Rectangles and Squares"""
         window = turtle.Screen()
-        window.bgcolor("black")  # Change the background color to black
+        window.bgcolor("black")
 
         t = turtle.Turtle()
-        t.speed(1)  # Set the speed of the turtle
+        t.speed(1)
 
         colors = [
             "red",
@@ -120,22 +121,17 @@ class Base:
             "yellow",
             "purple",
             "orange",
-        ]  # List of colors to choose from
-
-        # Define the starting position
+        ]
         start_x = -200
         start_y = 200
 
         for rect in list_rectangles + list_squares:
             t.penup()
-            t.goto(start_x, start_y)  # Move the turtle to the starting position
+            t.goto(start_x, start_y)
             t.pendown()
 
-            t.color(
-                random.choice(colors)
-            )  # Choose a random color for each rectangle/square
-            t.begin_fill()  # Start filling the shape with the chosen color
-
+            t.color(random.choice(colors))
+            t.begin_fill()
             for _ in range(2):
                 t.forward(rect.width)
                 t.right(90)
@@ -143,8 +139,6 @@ class Base:
                 t.right(90)
 
             t.end_fill()  # End filling the shape
-
-            # Update the starting position for the next shape
             start_x += rect.width + 50
             if start_x > 200:
                 start_x = -200
