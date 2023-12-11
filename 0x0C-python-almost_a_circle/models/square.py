@@ -26,6 +26,7 @@ class Square(Rectangle):
         super().__setattr__("height", value)
 
     def update(self, *args, **kwargs):
+        """Update function for square"""
         attr = ["id", "size", "x", "y"]
         if args and len(args) > 0:
             for attr, value in zip(attr, args):
