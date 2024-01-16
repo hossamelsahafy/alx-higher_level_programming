@@ -1,3 +1,3 @@
 -- Script To list Tables Inside DataBase
-USE mysql;
-SHOW TABLES;
+USE IF EXISTS mysql;
+SHOW IF EXISTS TABLES;
