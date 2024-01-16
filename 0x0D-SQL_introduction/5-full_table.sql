@@ -1,2 +1,2 @@
 -- Script To DESCRIBE TABLE
-DESCRIBE firsT_table;
+SHOW CREATE TABLE first_table;
