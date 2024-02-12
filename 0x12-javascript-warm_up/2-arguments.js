@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // Script script that prints a message depending
 // of the number of arguments passed
 const arg = process.argv.length - 2; // remove  the first two elements (node and this file name)
