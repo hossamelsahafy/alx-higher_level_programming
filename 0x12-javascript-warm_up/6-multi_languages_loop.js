@@ -8,4 +8,4 @@ const thirdline = 'JavaScript is amazing';
 const languages = [firstline, secondline, thirdline];
 for (const language of languages) {
   console.log(language);
-} 
+}
