@@ -4,5 +4,8 @@
 const firstline = 'C is fun';
 const secondline = 'Python is cool';
 const thirdline = 'JavaScript is amazing';
-const lines = `${firstline}\n${secondline}\n${thirdline}`;
-console.log(lines);
+
+const languages = [firstline, secondline, thirdline];
+for (const language of languages) {
+  console.log(language);
+} 
