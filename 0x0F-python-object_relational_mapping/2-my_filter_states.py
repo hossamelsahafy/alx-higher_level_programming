@@ -18,7 +18,8 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
     state_name_searched = sys.argv[4]
-    Q = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+    Q = ("SELECT * FROM states WHERE name = '{}' \
+        ORDER BY id ASC".format(sys.argv[4]))
     cur.execute(Q)
     rows = cur.fetchall()
     for r in rows:
