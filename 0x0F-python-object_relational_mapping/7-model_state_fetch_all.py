@@ -16,10 +16,7 @@ if __name__ == "__main__":
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
             user_name, password, db_name.strip()
-        ), pool_pre_ping=True
-)
-
-
+        ), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
     for state in session.query(State).order_by(State.id):
