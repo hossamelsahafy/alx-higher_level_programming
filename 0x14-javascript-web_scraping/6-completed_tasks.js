@@ -8,14 +8,14 @@ REQ(URL, (error, response, body) => {
     const todos = JSON.parse(body);
     const Completed = {};
     for (const Todo of todos) {
-        if (Todo.completed) {
-            if(Completed[Todo.userId]) {
-                Completed[Todo.userId]++;
-            } else {
-                Completed[Todo.userId] = 1;
-            }
+      if (Todo.completed) {
+        if (Completed[Todo.userId]) {
+          Completed[Todo.userId]++;
+        } else {
+          Completed[Todo.userId] = 1;
         }
+      }
     }
-        console.log(Completed);
-    }
+    console.log(Completed);
+  }
 });
