@@ -9,8 +9,8 @@ REQ(URL, (error, response, body) => {
     const json = JSON.parse(body);
     let numberOfMovies = 0;
     for (const Film of json.results) {
-      if (Film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${Id}/`)) {
-        numberOfMovies++;
+        if (Film.characters.some(character => character.includes('/18/'))) {
+            numberOfMovies++;
       }
     }
     console.log(numberOfMovies);
