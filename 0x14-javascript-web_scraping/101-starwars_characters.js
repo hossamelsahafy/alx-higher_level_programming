@@ -1,7 +1,10 @@
 #!/usr/bin/node
 const REQ = require('request-promise-native');
-async function getCharacterNames () {
+const movieId = process.argv[2];
+
+async function getCharacterNames (movieId) {
   try {
+    const URL = `https://swapi.dev/api/films/${movieId}/`;
     const body = await REQ(URL);
     const data = JSON.parse(body);
     const characterURLS = data.characters;
@@ -16,4 +19,4 @@ async function getCharacterNames () {
   }
 }
 
-getCharacterNames();
+getCharacterNames(movieId);
